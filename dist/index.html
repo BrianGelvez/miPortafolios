@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans&family=PT+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script src="./app.js" defer></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+
+    <title>Portafolio</title>
+  </head>
+  <body
+    class="bg-sky-100 text-stone-900 dark:bg-primary dark:text-cyan-50 font-roboto"
+  >
+    <header>
+      <!--  INICIO MENU  -->
+      <nav
+        class="flex justify-between py-10 m-auto px-10 text-lg font-medium tracking-widest md:items-center"
+      >
+        <a href=""><img src="./img/bg (1).png" alt="" width="100" /></a>
+        <div
+          id="menu"
+          class="bg-white dark:bg-slate-800 p-7 h-[380px] w-[320px] md:flex flex-col items-start justify-around rounded-lg text-dark dark:text-white md:flex-row md:w-full md:py-0 md:h-[50px] md:bg-inherit md:dark:bg-primary hidden"
+        >
+          <ul
+            class="flex h-5/6 flex-col justify-around md:flex-row md:justify-center w-full"
+          >
+            <li class="md:px-5 hover:text-sky-600"><a href="">Quién Soy</a></li>
+            <li class="md:px-5 hover:text-sky-600">
+              <a href="#experiencia">Experiencia</a>
+            </li>
+            <li class="md:px-5 hover:text-sky-600"><a href="#jobSection3">Proyectos</a></li>
+            <li class="md:px-5 hover:text-sky-600">
+              <a href="#contacto">Contáctame</a>
+            </li>
+          </ul>
+          <!-- BOTON MODO OSCURO -->
+          <button id="darkButton">
+            <i class="bi bi-moon-stars-fill text-sky-600 text-2xl"></i>
+          </button>
+          <!-- BOTON MENU HAMBURGUESA -->
+        </div>
+        <button id="menu-button" class="absolute top-10 right-12 md:hidden">
+          <span
+            class="br-1 block bg-black dark:bg-white my-2 rounded-md h-[3px] w-[28px]"
+          ></span>
+          <span
+            class="br-2 block bg-black dark:bg-white my-2 rounded-md h-[3px] w-[28px]"
+          ></span>
+          <span
+            class="br-3 block bg-black dark:bg-white my-2 rounded-md h-[3px] w-[28px]"
+          ></span>
+        </button>
+      </nav>
+      <!-- FIN DEL MENU  -->
+    </header>
+    <main>
+      <!-- #1 SECCION HERO  -->
+      <section class="my-0 flex flex-col lg:flex-row lg:h-[850px]">
+        <div class="p-10 lg:w-[80%] lg:h-[500px] lg:self-center">
+          <h1
+            class="text-sky-600 dark:text-sky-300 text-2xl font-bold tracking-widest leading-10"
+          >
+            Hola, soy
+          </h1>
+          <p class="py-2 text-3xl font-bold text-slate-600 dark:text-slate-300">
+            Brian Gelvez
+          </p>
+          <p class="text-3xl font-bold text-slate-500 dark:text-slate-600">
+            Full Stack Developer Jr.
+          </p>
+          <p class="mt-5 text-lg">
+            Tengo 25 años y soy un apasionado desarrollador Jr con una sed insaciable de conocimiento. Mi pasión por la tecnología y mi deseo de crecer profesionalmente me impulsan a explorar y dominar nuevas habilidades en el mundo del desarrollo de software. Constantemente me sumerjo en proyectos desafiantes, aprovechando cada oportunidad para aprender y perfeccionar mis habilidades técnicas. Estoy listo para enfrentar nuevos desafíos y contribuir en el desarrollo de soluciones innovadoras. Estoy comprometido a seguir aprendiendo y mantenerme al día con las últimas tendencias tecnológicas, con el objetivo de convertirme en un profesional altamente capacitado y exitoso en el campo del desarrollo de aplicaciones.
+          </p>
+          <!-- REDES SOCIALES -->
+          <div class="py-6">
+            <a href="https://www.facebook.com/briiaan.leeonel/" class="pr-2 text-2xl hover:text-sky-600"
+              ><i class="bi bi-facebook px-2"></i
+            ></a>
+            <a href="https://instagram.com/brian.gelvez?igshid=ZDc4ODBmNjlmNQ==" class="pr-2 text-2xl hover:text-sky-600"
+              ><i class="bi bi-instagram px-2"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/briangelvez97/" class="pr-2 text-2xl hover:text-sky-600"
+              ><i class="bi bi-linkedin px-2"></i
+            ></a>
+            <a href="https://github.com/BrianGelvez" class="pr-2 text-2xl hover:text-sky-600"
+              ><i class="bi bi-github px-2"></i
+            ></a>
+          </div>
+          <div>
+            <button
+              class="border-2 rounded border-sky-500 p-4 w-[250px] text-lg tracking-widest hover:bg-sky-500 hover:dark:text-slate-900 ease-out duration-300"
+            >
+              <a href="https://wa.link/fsrrkg">Contáctame</a>
+            </button>
+          </div>
+        </div>
+        <!-- Contenedor para la Imagen -->
+        <div class="my-10 w-full">
+          <div
+            class="w-[300px] h-[320px] m-auto bg-[url('./img/miFoto.png')] lg:bg-[url('./img/miFoto.png')] bg-cover rounded-lg lg:w-[100%] lg:h-[100%] lg:bg-center lg:bg-no-repeat lg:bg-[length:617px_840px]"
+          ></div>
+        </div>
+      </section>
+
+      <!-- #2 SECCION EXPERIENCIA LABORAL -->
+      <h2
+        class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
+        id="experiencia"
+      >
+        Experiencia Laboral
+      </h2>
+      <section
+        class="my-12 flex flex-col w-[84%] m-auto lg:flex-row lg:w-[87%] lg:my-28"
+        id="jobSection"
+      >
+        <div class="flex justify-between lg:flex-col lg:w-[20%]">
+          <button
+            type="button"
+            id="link1"
+            data-id="job1"
+            class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left border-sky-500 bg-white dark:bg-slate-700"
+          >
+            Abridores Lili.
+          </button>
+          <button
+            type="button"
+            data-id="job2"
+            class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
+          >
+            Ejercito Argentino.
+          </button>
+          <button
+            type="button"
+            data-id="job3"
+            class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
+          >
+            Negocio Familiar
+          </button>
+          <button
+            type="button"
+            data-id="job4"
+            class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
+          >
+            BootCamp
+          </button>
+        </div>
+
+        <!-- CONTAINER JOB DESCRIPTION -->
+        <div class="my-5 lg:px-10 lg:my-0 lg:max-w-[800px]">
+          <!-- JOB #1 DESCRIPTION -->
+
+          <article id="job1">
+            <h3>
+              Operador 
+              <span class="text-sky-500 font-bold text-lg">@AbridoresLili</span>
+            </h3>
+            <h4 class="text-sm pb-5">Buenos Aires, Marzo 2016 - Diciembre 2017</h4>
+            <ul>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                  Primer empleo luego de la secundaria.
+                </p>
+              </li>
+            </ul>
+          </article>
+          <!-- SECCIONES OCULTAS POR DEFECTO -->
+          <!-- JOB #2 DESCRIPTION -->
+
+          <article id="job2" class="hidden">
+            <h3>
+              Soldado Voluntario
+              <span class="text-sky-500 font-bold text-lg">@ejercitoarg</span>
+            </h3>
+            <h4 class="text-sm pb-5">Cordoba, Marzo 2018 - Junio 2022</h4>
+            <ul>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    Soldado Voluntario en el Regimiento de Infantería N°2, Compañía de Comandos 602.
+                </p>
+              </li>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    Reconocido como el mejor soldado de la compañía durante los años 2019, 2020 y 2021.
+                </p>
+              </li>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    Mantuve un rendimiento físico del 100% durante toda mi carrera militar, completando cursos como buceo táctico y Paracaidista Militar, con más de 10 saltos.
+                </p>
+              </li>
+            </ul>
+          </article>
+          <!-- JOB #3 DESCRIPTION -->
+          <article id="job3" class="hidden">
+            <h3>
+              Tienda Lara
+              <span class="text-sky-500 font-bold text-lg">@indumentarialara</span>
+            </h3>
+            <h4 class="text-sm pb-5">Agosto 2022 - Actualidad</h4>
+            <ul>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    Nuestra tienda, Tienda Lara, es un emprendimiento familiar que comenzó en 2018. Desde entonces, hemos trabajado arduamente para ofrecer a nuestros clientes productos de calidad y un servicio excepcional. Nos enorgullece ser una empresa local que ha logrado establecerse en el mercado y ganarse la confianza de nuestros clientes.
+                </p>
+              </li>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    En Tienda Lara, nos especializamos en el manejo de stock y la atención al cliente. Nos aseguramos de mantener siempre un inventario actualizado y bien organizado, para que nuestros clientes encuentren fácilmente lo que están buscando. Además, brindamos una atención personalizada y amigable, donde escuchamos las necesidades y preferencias de cada cliente, para poder ofrecerles las mejores opciones y soluciones.
+                </p>
+              </li>
+              <li class="flex items-center py-2">
+              </li>
+            </ul>
+          </article>
+          <!-- JOB #4 DESCRIPTION -->
+          <article id="job4" class="hidden">
+            <h3>
+              Alumno de Henry
+              <span class="text-sky-500 font-bold text-lg">@Henry</span>
+            </h3>
+            <h4 class="text-sm pb-5">marzo 2023 - Actualidad</h4>
+            <ul>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    Como estudiante del bootcamp Soy Henry, me encuentro actualmente desarrollando mi proyecto individual. En este desafío, estoy utilizando tecnologías de vanguardia como React, Redux, Node.js, Express, Sequelize y PostgreSQL. A través de este BootCamp, he adquirido un amplio conocimiento y experiencia en el desarrollo de aplicaciones web.
+                </p>
+              </li>
+              <li class="flex items-center py-2">
+                <span class="pr-2 text-sky-500 font-black">&#9655;</span>
+                <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                    Como apasionado de la tecnología, he invertido los últimos dos años en aprender por cuenta propia diversas tecnologías clave, como HTML, CSS y JavaScript. Durante este período, he adquirido un sólido conocimiento y habilidades prácticas en el desarrollo web, lo que me ha permitido crear sitios y aplicaciones interactivas de manera autodidacta.
+                </p>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <div class="flex flex-col items-center justify-center pt-2 pb-2">
+        <h2 class="text-3xl font-bold mb-8">Mis habilidades</h2>
+        <div class="flex flex-wrap justify-center text-center">
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>70%</p>HTML</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>40%</p>BOOTSTRAP</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>20%</p>TAILWIND</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>70%</p>REACT</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>50%</p>REDUX</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>70%</p>NODE.JS</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>70%</p>EXPRESS</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>70%</p>SEQUELIZE</span>
+          <span class="bg-slate-200 rounded-lg px-2 mr-2 mb-2 text-slate-700 hover:bg-slate-700 hover:text-white"><p>70%</p>POSGRESQL</span>
+        </div>
+      </div>
+      
+      
+      <!-- #3 SECCION PROYECTOS -->
+      <h3
+        class="text-3xl text-slate-700 dark:text-white my-5 px-12 font-bold tracking-widest md:text-center"
+        id="jobSection3"
+      >
+        Mis Ultimos Proyectos
+      </h3>
+
+      <section
+        class="my-12 flex flex-col items-center justify-center w-[90%] m-auto lg:flex-row"
+      >
+        <!-- PRIMER PROYECTO  -->
+        <div class="border-1 rounded-lg bg-white dark:bg-slate-800 m-5">
+          <div class="m-2">
+            <img
+              src="./img/videogames.png"
+              alt=""
+              class="opacity-80 hover:opacity-100"
+            />
+            <h4 class="font-bold my-2">VIDEOGAMES</h4>
+            <article class="flex justify-between">
+              <div class="flex flex-nowrap items-center">
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >REACT</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >CSS</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >NODE.JS</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >EXPRESS</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >SEQUIELIZE</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >POSGRESQL</span
+                >
+              </div>
+              <div
+                class="text-xl text-slate-600 dark:text-slate-200 pr-2 flex flex-nowrap"
+              >
+                <a href="https://github.com/BrianGelvez/videogames"><i class="bi bi-github px-2 hover:text-blue-500"></i></a>
+                <a href="https://videogames-nine.vercel.app/"><i class="bi bi-eye px-2 hover:text-blue-500"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- SEGUNDO PROYECTO  -->
+        <div class="border-1 rounded-lg bg-white dark:bg-slate-800 m-5">
+          <div class="m-2">
+            <img
+              src="./img/rickandmorty.png"
+              alt=""
+              class="opacity-80 hover:opacity-100"
+            />
+            <h4 class="font-bold my-2">RICKANDMORTY</h4>
+            <article class="flex justify-between">
+              <div class="flex flex-nowrap items-center">
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >REACT</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >CSS</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >NODE.JS</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >EXPRESS</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >SEQUELIZE</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >POSGRESQL</span
+                >
+              </div>
+              <div
+                class="text-xl text-slate-600 dark:text-slate-200 pr-2 flex flex-nowrap"
+              >
+                <a href="https://github.com/BrianGelvez/rickandmorty"><i class="bi bi-github px-2 hover:text-blue-500"></i></a>
+                <a href=""><i class="bi bi-eye px-2 hover:text-blue-500"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- TERCER PROYECTO  -->
+        <div class="border-1 rounded-lg bg-white dark:bg-slate-800 m-5">
+          <div class="m-2">
+            <img
+              src="./img/miPortafolio.png"
+              alt=""
+              class="opacity-80 hover:opacity-100"
+            />
+            <h4 class="font-bold my-2">PORTAFOLIO</h4>
+            <article class="flex justify-between">
+              <div class="flex flex-nowrap items-center">
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >HTML</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >TAILWIND</span
+                >
+                <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700 hover:bg-slate-700 hover:text-white"
+                  >JAVASCRIPT</span
+                >
+              </div>
+              <div
+                class="text-xl text-slate-600 dark:text-slate-200 pr-2 flex flex-nowrap"
+              >
+                <a href="https://github.com/BrianGelvez/miportafolio"><i class="bi bi-github px-2 hover:text-blue-500"></i></a>
+                <a href=""><i class="bi bi-eye px-2 hover:text-blue-500"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </section>
+      <!-- #4 SECCION CONTACTOS  -->
+
+      <h3 class="text-3xl text-slate-700 dark:text-white mt-12 mb-10 px-10 font-bold tracking-widest text-center">
+        Contáctame
+      </h3>
+      
+      <section class="flex flex-col w-[90%] m-auto" id="contacto">
+        <form class="w-[90%] md:max-w-[600px] m-auto">
+          <div>
+            <input
+              placeholder="info@ejemplo.com"
+              type="email"
+              name="email"
+              id="email"
+              class="p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400 dark:bg-black dark:text-white"
+            />
+          </div>
+      
+          <div class="py-3">
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Nombre"
+              class="p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400 dark:bg-black dark:text-white"
+            />
+          </div>
+      
+          <div>
+            <textarea
+              name="msj"
+              id="msj"
+              rows="5"
+              placeholder="Mensaje"
+              class="p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400 dark:bg-black dark:text-white"
+            ></textarea>
+          </div>
+          <div class="my-3">
+            <button class="bg-sky-600 text-white p-3 w-full rounded-lg text-xl tracking-widest" type="submit">
+              Enviar Mensaje
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
